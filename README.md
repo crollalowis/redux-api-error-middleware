@@ -9,9 +9,13 @@ It dispatches `API_ERROR` when it encounters any action with an error flag set b
 
 The middleware is not blocking. It will just pass through any actions.
 
+
 `status`: http status code
+
 `error`: bool
+
 `message`: error response text
+
 
 ## Use case
 
