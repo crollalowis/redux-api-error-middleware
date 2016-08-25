@@ -12,6 +12,10 @@ It dispatches API_ERROR when it encounters any action with an error flag set by 
   message: error response text
 ```
 
+## Use case
+
+You use redux and have a lot of actions for api calls that dispatch different _ERROR or _FAILURE actions, but you don`t want to create reducers for all of them. We use this to generalize the API_ERROR and watch for it with a long running saga that decides by the error code what logic to execute.
+
 ## Usage
 
 ```
@@ -26,5 +30,28 @@ const store = createStore(
     apiErrorMiddleware
   )
 );
+
+```
+
+## Usage with saga
+
+```
+
+export function* apiErrorWorker(action) {
+  switch (action.status) {
+    case 401: {
+      yield call(SomeAction.showLogin);
+      break;
+    }
+    default: {
+      console.warn('caught api error', action);
+      break;
+    }
+  }
+}
+
+export function* apiErrorWatcher() {
+  yield* takeEvery('API_ERROR', apiErrorWorker);
+}
 
 ```
