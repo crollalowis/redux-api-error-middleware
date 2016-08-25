@@ -1,0 +1,19 @@
+{
+  "name": "redux-api-error-middleware",
+  "version": "0.0.1",
+  "description": "middleware to dispatch api errors by inspecting payloads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/r.hoffmann/redux-api-error-middleware.git"
+  },
+  "author": "Richard Hoffmann <rhoffmann@fastmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/r.hoffmann/redux-api-error-middleware/issues"
+  },
+  "homepage": "https://gitlab.com/r.hoffmann/redux-api-error-middleware#README"
+}
