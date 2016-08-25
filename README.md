@@ -3,14 +3,15 @@ Simple middleware to inspect action payloads and dispatch a structured API_ERROR
 ## Exports
 
 `API_ERROR`: the action name
+`default`: the middleware factory
 
-It dispatches API_ERROR when it encounters any action with an error flag set by inspecting the payload. The dispatched action will have the following properties set (not in payload).
+It dispatches `API_ERROR` when it encounters any action with an error flag set by inspecting the payload. The dispatched action will have the following properties set (not in payload).
 
-```
-  status: http status code
-  error: bool
-  message: error response text
-```
+The middleware is not blocking. It will just pass through any actions.
+
+`status`: http status code
+`error`: bool
+`message`: error response text
 
 ## Use case
 
